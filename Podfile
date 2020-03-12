@@ -6,5 +6,8 @@ target 'breakpoint' do
   use_frameworks!
 
   # Pods for breakpoint
-
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+  
 end

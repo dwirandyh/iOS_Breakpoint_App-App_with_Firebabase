@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		8D3B4975241A17050060F7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B4973241A17050060F7B4 /* Main.storyboard */; };
 		8D3B4977241A17060060F7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B4976241A17060060F7B4 /* Assets.xcassets */; };
 		8D3B497A241A17060060F7B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B4978241A17060060F7B4 /* LaunchScreen.storyboard */; };
+		8DD9A917241A1D9B004C4A44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD9A916241A1D9B004C4A44 /* GoogleService-Info.plist */; };
+		8DF9AE84241A22FD00A8F804 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF9AE83241A22FD00A8F804 /* DataService.swift */; };
 		EFCBB3CF22BD6BDBA1B45DEB /* Pods_breakpoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A089A27EF1C36C0A4706F7 /* Pods_breakpoint.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		8D3B4976241A17060060F7B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D3B4979241A17060060F7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D3B497B241A17060060F7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DD9A916241A1D9B004C4A44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DF9AE83241A22FD00A8F804 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,16 +69,58 @@
 		8D3B496A241A17050060F7B4 /* breakpoint */ = {
 			isa = PBXGroup;
 			children = (
+				8DF9AE82241A22EE00A8F804 /* Services */,
+				8DD9A915241A184D004C4A44 /* Extensions */,
+				8DD9A914241A183D004C4A44 /* Model */,
+				8DD9A912241A1831004C4A44 /* View */,
+				8DD9A911241A1808004C4A44 /* Controller */,
 				8D3B496B241A17050060F7B4 /* AppDelegate.swift */,
 				8D3B496D241A17050060F7B4 /* SceneDelegate.swift */,
-				8D3B496F241A17050060F7B4 /* FirstViewController.swift */,
-				8D3B4971241A17050060F7B4 /* SecondViewController.swift */,
 				8D3B4973241A17050060F7B4 /* Main.storyboard */,
 				8D3B4976241A17060060F7B4 /* Assets.xcassets */,
 				8D3B4978241A17060060F7B4 /* LaunchScreen.storyboard */,
 				8D3B497B241A17060060F7B4 /* Info.plist */,
+				8DD9A916241A1D9B004C4A44 /* GoogleService-Info.plist */,
 			);
 			path = breakpoint;
+			sourceTree = "<group>";
+		};
+		8DD9A911241A1808004C4A44 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8D3B496F241A17050060F7B4 /* FirstViewController.swift */,
+				8D3B4971241A17050060F7B4 /* SecondViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8DD9A912241A1831004C4A44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8DD9A914241A183D004C4A44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8DD9A915241A184D004C4A44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8DF9AE82241A22EE00A8F804 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8DF9AE83241A22FD00A8F804 /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D383D1EA2E254CEE55539F2B /* Frameworks */ = {
@@ -91,7 +137,6 @@
 				755DF016C66676272A0A9B31 /* Pods-breakpoint.debug.xcconfig */,
 				0500FB48C7D66443ABCDA646 /* Pods-breakpoint.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -106,6 +151,7 @@
 				8D3B4964241A17050060F7B4 /* Sources */,
 				8D3B4965241A17050060F7B4 /* Frameworks */,
 				8D3B4966241A17050060F7B4 /* Resources */,
+				6E3BDE5B22EA931715E06D70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D3B497A241A17060060F7B4 /* LaunchScreen.storyboard in Resources */,
+				8DD9A917241A1D9B004C4A44 /* GoogleService-Info.plist in Resources */,
 				8D3B4977241A17060060F7B4 /* Assets.xcassets in Resources */,
 				8D3B4975241A17050060F7B4 /* Main.storyboard in Resources */,
 			);
@@ -163,6 +210,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6E3BDE5B22EA931715E06D70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-breakpoint/Pods-breakpoint-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-breakpoint/Pods-breakpoint-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-breakpoint/Pods-breakpoint-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C1E0A75E1B709DD061EA771D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +260,7 @@
 				8D3B4970241A17050060F7B4 /* FirstViewController.swift in Sources */,
 				8D3B496C241A17050060F7B4 /* AppDelegate.swift in Sources */,
 				8D3B496E241A17050060F7B4 /* SceneDelegate.swift in Sources */,
+				8DF9AE84241A22FD00A8F804 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
