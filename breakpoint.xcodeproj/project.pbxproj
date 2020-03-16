@@ -12,13 +12,13 @@
 		8D3A05FA241A345E007A6B95 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A05F9241A345E007A6B95 /* LoginVC.swift */; };
 		8D3A05FC241A3E7C007A6B95 /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A05FB241A3E7C007A6B95 /* InsetTextField.swift */; };
 		8D3A05FE241A5F38007A6B95 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A05FD241A5F38007A6B95 /* ShadowView.swift */; };
-		8D3B496C241A17050060F7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B496B241A17050060F7B4 /* AppDelegate.swift */; };
 		8D3B496E241A17050060F7B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B496D241A17050060F7B4 /* SceneDelegate.swift */; };
 		8D3B4970241A17050060F7B4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B496F241A17050060F7B4 /* FirstViewController.swift */; };
 		8D3B4972241A17050060F7B4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B4971241A17050060F7B4 /* SecondViewController.swift */; };
 		8D3B4975241A17050060F7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B4973241A17050060F7B4 /* Main.storyboard */; };
 		8D3B4977241A17060060F7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B4976241A17060060F7B4 /* Assets.xcassets */; };
 		8D3B497A241A17060060F7B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3B4978241A17060060F7B4 /* LaunchScreen.storyboard */; };
+		8D94D9BE241FBF31003A204A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B496B241A17050060F7B4 /* AppDelegate.swift */; };
 		8DD9A917241A1D9B004C4A44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD9A916241A1D9B004C4A44 /* GoogleService-Info.plist */; };
 		8DF9AE84241A22FD00A8F804 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF9AE83241A22FD00A8F804 /* DataService.swift */; };
 		EFCBB3CF22BD6BDBA1B45DEB /* Pods_breakpoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A089A27EF1C36C0A4706F7 /* Pods_breakpoint.framework */; };
@@ -277,9 +277,9 @@
 				8D3A05FA241A345E007A6B95 /* LoginVC.swift in Sources */,
 				8D3A05FC241A3E7C007A6B95 /* InsetTextField.swift in Sources */,
 				8D3B4970241A17050060F7B4 /* FirstViewController.swift in Sources */,
-				8D3B496C241A17050060F7B4 /* AppDelegate.swift in Sources */,
 				8D05F5C4241FAD8100B36E8D /* AuthService.swift in Sources */,
 				8D3B496E241A17050060F7B4 /* SceneDelegate.swift in Sources */,
+				8D94D9BE241FBF31003A204A /* AppDelegate.swift in Sources */,
 				8DF9AE84241A22FD00A8F804 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

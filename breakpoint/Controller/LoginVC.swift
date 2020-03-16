@@ -9,22 +9,48 @@
 import UIKit
 
 class LoginVC: UIViewController {
-
+    
+    @IBOutlet weak var emailTextField: InsetTextField!
+    @IBOutlet weak var passwordTextField: InsetTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func signIn(_ sender: Any) {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        AuthService.instance.loginUser(withEmail: email, andPassword: password) { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            }else {
+                print(String(describing: error?.localizedDescription))
+            }
+            
+            self.registerUser(email: email, password: password)
+        }
     }
-    */
+    
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func registerUser(email: String, password: String){
+        AuthService.instance.registerUser(withEmail: email, andPassword: password) { (isRegisteredSuccess, error) in
+            if isRegisteredSuccess {
+                AuthService.instance.loginUser(withEmail: email, andPassword: password) { (success, error) in
+                    self.dismiss(animated: true, completion: nil)
+                }
+            } else {
+                print(String(describing: error?.localizedDescription))
+            }
+        }
+        
+    }
+}
 
+extension LoginVC : UITextFieldDelegate {
+    
 }
