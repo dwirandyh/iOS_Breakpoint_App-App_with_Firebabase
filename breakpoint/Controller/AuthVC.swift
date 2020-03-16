@@ -18,6 +18,7 @@ class AuthVC: UIViewController {
 
     @IBAction func signInWithEMail(_ sender: Any) {
         let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC")
+        loginVC?.modalPresentationStyle = .fullScreen
         self.present(loginVC!, animated: true, completion: nil)
     }
     

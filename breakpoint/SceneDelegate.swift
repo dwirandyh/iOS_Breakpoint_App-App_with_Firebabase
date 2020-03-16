@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+//        try? Auth.auth().signOut()
         let user = Auth.auth().currentUser
         if user == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -27,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC")
             authVC.modalPresentationStyle = .fullScreen
             self.window?.makeKeyAndVisible()
+            // set auth vc as the first view controller
             self.window?.rootViewController?.present(authVC, animated: true, completion: nil)
         }
         
