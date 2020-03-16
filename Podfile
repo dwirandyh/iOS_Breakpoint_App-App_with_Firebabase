@@ -9,5 +9,7 @@ target 'breakpoint' do
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
   
 end
