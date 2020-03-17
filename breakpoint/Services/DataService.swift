@@ -11,6 +11,8 @@ import Firebase
 
 let DB_BASE : DatabaseReference = Database.database().reference()
 
+typealias SendCompletionHandler = (_ status: Bool) -> Void
+
 class DataService {
     static let instance = DataService()
     
@@ -37,5 +39,14 @@ class DataService {
     
     func createDBUser(uid: String, userData: Dictionary<String, Any>){
         REF_USERS.child(uid).updateChildValues(userData)
+    }
+    
+    func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping SendCompletionHandler){
+        if groupKey != nil {
+            
+        } else {
+            REF_FEED.childByAutoId().updateChildValues(["content": message, "senderId": uid])
+            sendComplete(true)
+        }
     }
 }
