@@ -20,6 +20,8 @@ class CreatePostVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.textField.delegate = self
+        sendButton.bindToKeyboard()
     }
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
