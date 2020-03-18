@@ -12,6 +12,7 @@ import Firebase
 let DB_BASE : DatabaseReference = Database.database().reference()
 
 typealias SendCompletionHandler = (_ status: Bool) -> Void
+typealias FeedMessageHandler = (_ messages: [Message]) -> Void
 
 class DataService {
     static let instance = DataService()
@@ -47,6 +48,22 @@ class DataService {
         } else {
             REF_FEED.childByAutoId().updateChildValues(["content": message, "senderId": uid])
             sendComplete(true)
+        }
+    }
+    
+    func getAllFeedMessages(handler: @escaping FeedMessageHandler){
+        var messageArray : [Message] = []
+        REF_FEED.observeSingleEvent(of: .value) { (feedMessageSnapshot) in
+            guard let feedMessage = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for message in feedMessage {
+                let content = message.childSnapshot(forPath: "content").value as! String
+                let senderId = message.childSnapshot(forPath: "senderId").value as! String
+                let newFeedMessage = Message(content: content, senderId: senderId)
+                messageArray.append(newFeedMessage)
+            }
+            
+            handler(messageArray)
         }
     }
 }

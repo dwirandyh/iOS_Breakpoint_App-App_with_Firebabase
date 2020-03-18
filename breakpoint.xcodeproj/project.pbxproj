@@ -24,6 +24,7 @@
 		8DD9A917241A1D9B004C4A44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD9A916241A1D9B004C4A44 /* GoogleService-Info.plist */; };
 		8DEFF1FF24225F740072527E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFF1FE24225F740072527E /* UIViewExtension.swift */; };
 		8DEFF2012422672C0072527E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFF2002422672C0072527E /* FeedCell.swift */; };
+		8DEFF203242269120072527E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFF202242269120072527E /* Message.swift */; };
 		8DF9AE84241A22FD00A8F804 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF9AE83241A22FD00A8F804 /* DataService.swift */; };
 		EFCBB3CF22BD6BDBA1B45DEB /* Pods_breakpoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A089A27EF1C36C0A4706F7 /* Pods_breakpoint.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		8DD9A916241A1D9B004C4A44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DEFF1FE24225F740072527E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		8DEFF2002422672C0072527E /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		8DEFF202242269120072527E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8DF9AE83241A22FD00A8F804 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 		8DD9A914241A183D004C4A44 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8DEFF202242269120072527E /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				8D3C5B43242124A000C518A8 /* CreatePostVC.swift in Sources */,
 				8DEFF1FF24225F740072527E /* UIViewExtension.swift in Sources */,
 				8D3B496E241A17050060F7B4 /* SceneDelegate.swift in Sources */,
+				8DEFF203242269120072527E /* Message.swift in Sources */,
 				8D94D9BE241FBF31003A204A /* AppDelegate.swift in Sources */,
 				8DF9AE84241A22FD00A8F804 /* DataService.swift in Sources */,
 			);
