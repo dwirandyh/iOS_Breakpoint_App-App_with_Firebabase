@@ -13,6 +13,7 @@ let DB_BASE : DatabaseReference = Database.database().reference()
 
 typealias SendCompletionHandler = (_ status: Bool) -> Void
 typealias FeedMessageHandler = (_ messages: [Message]) -> Void
+typealias EmailCompletionHandler = (_ emails: [String]) -> Void
 
 class DataService {
     static let instance = DataService()
@@ -76,6 +77,23 @@ class DataService {
             }
             
             handler(messageArray)
+        }
+    }
+    
+    func getEmail(forSearchQuery query: String, handler: @escaping EmailCompletionHandler){
+        var emailArray: [String] = []
+        
+        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for user in userSnapshot {
+                let email = user.childSnapshot(forPath: "email").value as! String
+                
+                if email.contains(query) && email != Auth.auth().currentUser?.email {
+                    emailArray.append(email)
+                }
+            }
+            
+            handler(emailArray)
         }
     }
 }
