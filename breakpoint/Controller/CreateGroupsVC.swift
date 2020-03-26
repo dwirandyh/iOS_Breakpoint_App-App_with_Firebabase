@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateGroupsVC: UIViewController {
 
@@ -56,11 +57,22 @@ class CreateGroupsVC: UIViewController {
     }
     
     @IBAction func saveGroup(_ sender: Any) {
+        guard let title = titleTextField.text, titleTextField.text != "", let description = descriptionTextField.text, descriptionTextField.text != "" else { return }
         
+        DataService.instance.getIds(forUsernames: self.chosenEmails) { (ids) in
+            var userIds = ids
+            // append logged user to group member
+            userIds.append(Auth.auth().currentUser!.uid)
+            
+            DataService.instance.createGroup(withTitle: title, andDescription: description, forUserIds: userIds) { (isCreated) in
+                if isCreated {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    print("Group could not be created. Please try again.")
+                }
+            }
+        }
     }
-    
-    
-    
 }
 
 extension CreateGroupsVC: UITableViewDelegate {

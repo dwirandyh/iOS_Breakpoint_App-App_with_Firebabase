@@ -14,6 +14,8 @@ let DB_BASE : DatabaseReference = Database.database().reference()
 typealias SendCompletionHandler = (_ status: Bool) -> Void
 typealias FeedMessageHandler = (_ messages: [Message]) -> Void
 typealias EmailCompletionHandler = (_ emails: [String]) -> Void
+typealias IdsCompletionHandler = (_ ids: [String]) -> Void
+typealias GroupCompletionHandler = (_ groupCreated: Bool) -> Void
 
 class DataService {
     static let instance = DataService()
@@ -95,5 +97,26 @@ class DataService {
             
             handler(emailArray)
         }
+    }
+    
+    func getIds(forUsernames usernames: [String], handler: @escaping IdsCompletionHandler){
+        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
+            var idArray: [String] = []
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for user in userSnapshot {
+                let email = user.childSnapshot(forPath: "email").value as! String
+                
+                if usernames.contains(email){
+                    idArray.append(user.key)
+                }
+            }
+            
+            handler(idArray)
+        }
+    }
+    
+    func createGroup(withTitle title:String, andDescription description: String, forUserIds ids: [String], handler: @escaping GroupCompletionHandler){
+        REF_GROUPS.childByAutoId().updateChildValues(["title": title, "description": description, "members": ids])
+        handler(true)
     }
 }
