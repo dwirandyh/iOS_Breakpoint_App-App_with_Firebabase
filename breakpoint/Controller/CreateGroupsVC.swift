@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import core
 
 class CreateGroupsVC: UIViewController {
 
@@ -62,7 +62,7 @@ class CreateGroupsVC: UIViewController {
         DataService.instance.getIds(forUsernames: self.chosenEmails) { (ids) in
             var userIds = ids
             // append logged user to group member
-            userIds.append(Auth.auth().currentUser!.uid)
+            userIds.append(AuthService.instance.currentUser!.uid)
             
             DataService.instance.createGroup(withTitle: title, andDescription: description, forUserIds: userIds) { (isCreated) in
                 if isCreated {

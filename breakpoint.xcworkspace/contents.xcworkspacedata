@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/mobiledevmac14/#Data Randy/My Lab/IOS Development/iOS_Breakpoint_App-App_with_Firebabase/Module/core/core.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:breakpoint.xcodeproj">
    </FileRef>
    <FileRef

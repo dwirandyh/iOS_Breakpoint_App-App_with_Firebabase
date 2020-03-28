@@ -9,12 +9,24 @@
 import Foundation
 import Firebase
 
-typealias CompleteHandler = (_ status: Bool, _ error: Error?) -> ()
+public typealias CompleteHandler = (_ status: Bool, _ error: Error?) -> ()
 
-class AuthService {
-    static let instance = AuthService()
+public class AuthService {
+    public static let instance = AuthService()
     
-    func registerUser(withEmail email: String, andPassword password: String, userCreationComplete: @escaping CompleteHandler){
+    public var currentUser: User? {
+        return Auth.auth().currentUser
+    }
+    
+    public func signOut(){
+        do{
+            try Auth.auth().signOut()
+        }catch {
+            print(error)
+        }
+    }
+    
+    public func registerUser(withEmail email: String, andPassword password: String, userCreationComplete: @escaping CompleteHandler){
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             guard let user = authResult?.user else { userCreationComplete(false, error); return }
             
@@ -25,7 +37,7 @@ class AuthService {
         }
     }
     
-    func loginUser(withEmail email: String, andPassword password: String, loginComplete: @escaping CompleteHandler){
+    public func loginUser(withEmail email: String, andPassword password: String, loginComplete: @escaping CompleteHandler){
         Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
             guard (authDataResult?.user) != nil else { loginComplete(false, error); return }
             

@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Firebase
-
+import core
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
@@ -21,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
 //        try? Auth.auth().signOut()
-        let user = Auth.auth().currentUser
+        let user = AuthService.instance.currentUser
         if user == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             // AuthVC is storyboard id for AuthViewController

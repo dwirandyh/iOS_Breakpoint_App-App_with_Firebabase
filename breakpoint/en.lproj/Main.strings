@@ -1,0 +1,123 @@
+
+/* Class = "UILabel"; text = "dwirandy@gmail.com"; ObjectID = "32S-IH-Y70"; */
+"32S-IH-Y70.text" = "dwirandy@gmail.com";
+
+/* Class = "UITextView"; text = "Say something here..."; ObjectID = "340-Vi-qqj"; */
+"340-Vi-qqj.text" = "Say something here...";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "4DN-5f-DbX"; */
+"4DN-5f-DbX.text" = "Description";
+
+/* Class = "UIButton"; normalTitle = "Login With G+"; ObjectID = "4U2-1M-RAs"; */
+"4U2-1M-RAs.normalTitle" = "Login With G+";
+
+/* Class = "UILabel"; text = "Group Description"; ObjectID = "5mE-9F-muB"; */
+"5mE-9F-muB.text" = "Group Description";
+
+/* Class = "UILabel"; text = "nothing todo"; ObjectID = "6Q4-oA-zAw"; */
+"6Q4-oA-zAw.text" = "nothing todo";
+
+/* Class = "UILabel"; text = "_newgroup"; ObjectID = "7PU-JX-GjE"; */
+"7PU-JX-GjE.text" = "_newgroup";
+
+/* Class = "UILabel"; text = "_groupTitle"; ObjectID = "7Pk-eq-HLF"; */
+"7Pk-eq-HLF.text" = "_groupTitle";
+
+/* Class = "UITextField"; placeholder = "Enter an email...."; ObjectID = "9AR-4W-sMF"; */
+"9AR-4W-sMF.placeholder" = "Enter an email....";
+
+/* Class = "UILabel"; text = "_feed"; ObjectID = "DlY-Hk-ODq"; */
+"DlY-Hk-ODq.text" = "_feed";
+
+/* Class = "UITabBarItem"; title = "Me"; ObjectID = "FC4-U5-YvD"; */
+"FC4-U5-YvD.title" = "Me";
+
+/* Class = "UILabel"; text = "OR"; ObjectID = "HII-Lf-C3U"; */
+"HII-Lf-C3U.text" = "OR";
+
+/* Class = "UILabel"; text = "_group"; ObjectID = "HMK-da-7ma"; */
+"HMK-da-7ma.text" = "_group";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "I6h-4c-HU6"; */
+"I6h-4c-HU6.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "JNl-XC-rhQ"; */
+"JNl-XC-rhQ.text" = "Title";
+
+/* Class = "UILabel"; text = "user@breakpoint.com"; ObjectID = "LGr-SE-Pjs"; */
+"LGr-SE-Pjs.text" = "user@breakpoint.com";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
+"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "PGk-dG-qhr"; */
+"PGk-dG-qhr.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = " by email"; ObjectID = "Qlb-hv-m0k"; */
+"Qlb-hv-m0k.normalTitle" = " by email";
+
+/* Class = "UILabel"; text = "_postsomething"; ObjectID = "RtN-6z-dbs"; */
+"RtN-6z-dbs.text" = "_postsomething";
+
+/* Class = "UILabel"; text = "_ members"; ObjectID = "SJl-jX-8tl"; */
+"SJl-jX-8tl.text" = "_ members";
+
+/* Class = "UILabel"; text = "user@gmail.com"; ObjectID = "Sdn-rr-N70"; */
+"Sdn-rr-N70.text" = "user@gmail.com";
+
+/* Class = "UILabel"; text = "user@breakpoint.com"; ObjectID = "W7G-pJ-fbH"; */
+"W7G-pJ-fbH.text" = "user@breakpoint.com";
+
+/* Class = "UILabel"; text = "Add people to your group"; ObjectID = "XU8-1P-0lz"; */
+"XU8-1P-0lz.text" = "Add people to your group";
+
+/* Class = "UILabel"; text = "Group Title"; ObjectID = "Zas-a2-reL"; */
+"Zas-a2-reL.text" = "Group Title";
+
+/* Class = "UITabBarItem"; title = "Feed"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Feed";
+
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "am3-DK-FZF"; */
+"am3-DK-FZF.normalTitle" = "SIGN IN";
+
+/* Class = "UILabel"; text = "nothing todo"; ObjectID = "bTo-P7-9yC"; */
+"bTo-P7-9yC.text" = "nothing todo";
+
+/* Class = "UILabel"; text = "_me"; ObjectID = "cKK-c6-bGQ"; */
+"cKK-c6-bGQ.text" = "_me";
+
+/* Class = "UITabBarItem"; title = "Groups"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Groups";
+
+/* Class = "UILabel"; text = "email sign in"; ObjectID = "e94-Lc-oXh"; */
+"e94-Lc-oXh.text" = "email sign in";
+
+/* Class = "UIButton"; normalTitle = "  SEND"; ObjectID = "hpE-7G-f65"; */
+"hpE-7G-f65.normalTitle" = "  SEND";
+
+/* Class = "UIButton"; normalTitle = "DONE"; ObjectID = "iEb-Fn-QxR"; */
+"iEb-Fn-QxR.normalTitle" = "DONE";
+
+/* Class = "UILabel"; text = "_Login"; ObjectID = "jZ7-GP-Ou7"; */
+"jZ7-GP-Ou7.text" = "_Login";
+
+/* Class = "UIButton"; normalTitle = "DONE"; ObjectID = "r2l-YV-tfb"; */
+"r2l-YV-tfb.normalTitle" = "DONE";
+
+/* Class = "UIButton"; normalTitle = "Login With FB"; ObjectID = "rsC-fp-Ecp"; */
+"rsC-fp-Ecp.normalTitle" = "Login With FB";
+
+/* Class = "UILabel"; text = "_breakpoint"; ObjectID = "v1k-CU-ZgX"; */
+"v1k-CU-ZgX.text" = "_breakpoint";
+
+/* Class = "UITextField"; placeholder = "Your group description"; ObjectID = "xb7-w1-0Pr"; */
+"xb7-w1-0Pr.placeholder" = "Your group description";
+
+/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
+"zEq-FU-wV5.text" = "Second View";
+
+/* Class = "UITextField"; placeholder = "Your group title"; ObjectID = "zhR-qL-iHd"; */
+"zhR-qL-iHd.placeholder" = "Your group title";
+
+/* Class = "UILabel"; text = "user@gmail.com"; ObjectID = "zti-da-ckm"; */
+"zti-da-ckm.text" = "user@gmail.com";

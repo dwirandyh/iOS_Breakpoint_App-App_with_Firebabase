@@ -11,42 +11,42 @@ import Firebase
 
 let DB_BASE : DatabaseReference = Database.database().reference()
 
-typealias SendCompletionHandler = (_ status: Bool) -> Void
-typealias FeedMessageHandler = (_ messages: [Message]) -> Void
-typealias EmailCompletionHandler = (_ emails: [String]) -> Void
-typealias IdsCompletionHandler = (_ ids: [String]) -> Void
-typealias GroupCompletionHandler = (_ groupCreated: Bool) -> Void
-typealias AllGroupCompletionHanlder = (_ groupsArray: [Group]) -> Void
+public typealias SendCompletionHandler = (_ status: Bool) -> Void
+public typealias FeedMessageHandler = (_ messages: [Message]) -> Void
+public typealias EmailCompletionHandler = (_ emails: [String]) -> Void
+public typealias IdsCompletionHandler = (_ ids: [String]) -> Void
+public typealias GroupCompletionHandler = (_ groupCreated: Bool) -> Void
+public typealias AllGroupCompletionHanlder = (_ groupsArray: [Group]) -> Void
 
-class DataService {
-    static let instance = DataService()
+public class DataService {
+    public static let instance = DataService()
     
     private var _REF_BASE = DB_BASE
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_GROUPS = DB_BASE.child("groups")
     private var _REF_FEED = DB_BASE.child("feed")
     
-    var REF_BASE : DatabaseReference {
+    public var REF_BASE : DatabaseReference {
         return _REF_BASE
     }
     
-    var REF_USERS : DatabaseReference {
+    public var REF_USERS : DatabaseReference {
         return _REF_USERS
     }
     
-    var REF_GROUPS : DatabaseReference {
+    public var REF_GROUPS : DatabaseReference {
         return _REF_GROUPS
     }
     
-    var REF_FEED : DatabaseReference {
+    public var REF_FEED : DatabaseReference {
         return _REF_FEED
     }
     
-    func createDBUser(uid: String, userData: Dictionary<String, Any>){
+    public func createDBUser(uid: String, userData: Dictionary<String, Any>){
         REF_USERS.child(uid).updateChildValues(userData)
     }
     
-    func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping SendCompletionHandler){
+    public func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping SendCompletionHandler){
         if groupKey != nil {
             
         } else {
@@ -55,7 +55,7 @@ class DataService {
         }
     }
     
-    func getUsername(forUid uid: String, handler: @escaping (_ username: String) -> ()){
+    public func getUsername(forUid uid: String, handler: @escaping (_ username: String) -> ()){
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
             guard let usersSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
             
@@ -67,7 +67,7 @@ class DataService {
         }
     }
     
-    func getAllFeedMessages(handler: @escaping FeedMessageHandler){
+    public func getAllFeedMessages(handler: @escaping FeedMessageHandler){
         var messageArray : [Message] = []
         REF_FEED.observeSingleEvent(of: .value) { (feedMessageSnapshot) in
             guard let feedMessage = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else { return }
@@ -83,7 +83,7 @@ class DataService {
         }
     }
     
-    func getEmail(forSearchQuery query: String, handler: @escaping EmailCompletionHandler){
+    public func getEmail(forSearchQuery query: String, handler: @escaping EmailCompletionHandler){
         var emailArray: [String] = []
         
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
@@ -100,7 +100,7 @@ class DataService {
         }
     }
     
-    func getIds(forUsernames usernames: [String], handler: @escaping IdsCompletionHandler){
+    public func getIds(forUsernames usernames: [String], handler: @escaping IdsCompletionHandler){
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
             var idArray: [String] = []
             guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
@@ -116,12 +116,12 @@ class DataService {
         }
     }
     
-    func createGroup(withTitle title:String, andDescription description: String, forUserIds ids: [String], handler: @escaping GroupCompletionHandler){
+    public func createGroup(withTitle title:String, andDescription description: String, forUserIds ids: [String], handler: @escaping GroupCompletionHandler){
         REF_GROUPS.childByAutoId().updateChildValues(["title": title, "description": description, "members": ids])
         handler(true)
     }
     
-    func getAllGroups(handler: @escaping AllGroupCompletionHanlder){
+    public func getAllGroups(handler: @escaping AllGroupCompletionHanlder){
         var groupsArray = [Group]()
         REF_GROUPS.observeSingleEvent(of: .value) { (snapshot) in
             guard let groupSnapshot = snapshot.children.allObjects as? [DataSnapshot] else { return }

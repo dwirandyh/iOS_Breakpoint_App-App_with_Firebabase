@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import core
 
 class CreatePostVC: UIViewController {
 
@@ -31,7 +31,7 @@ class CreatePostVC: UIViewController {
     @IBAction func sendPost(_ sender: Any) {
         if textField.text != nil && textField.text != "Say something here..." {
             sendButton.isEnabled = true
-            DataService.instance.uploadPost(withMessage: textField.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil) { (isComplete) in
+            DataService.instance.uploadPost(withMessage: textField.text, forUID: (AuthService.instance.currentUser!.uid), withGroupKey: nil) { (isComplete) in
                 if isComplete {
                     self.sendButton.isEnabled = true
                     self.dismiss(animated: true, completion: nil)

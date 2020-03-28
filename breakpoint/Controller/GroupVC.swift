@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import core
 
 class GroupVC: UIViewController {
 
@@ -49,7 +50,10 @@ extension GroupVC: UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let groupFeedVC = storyboard?.instantiateViewController(withIdentifier: "GroupFeedVC") as? GroupFeedVC else { return }
+        self.present(groupFeedVC, animated: true, completion: nil)
+    }
 }
 
 extension GroupVC: UITableViewDelegate {
