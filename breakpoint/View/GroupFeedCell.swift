@@ -16,7 +16,7 @@ class GroupFeedCell: UITableViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     
     func configureCell(profileImage: UIImage, email: String, content: String){
-        self.profileImage.image = profileImage
+        self.profileImage.renderInitial(name: email)
         self.emailLabel.text = email
         self.contentLabel.text = content
     }

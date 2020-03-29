@@ -16,7 +16,8 @@ public typealias FeedMessageHandler = (_ messages: [Message]) -> Void
 public typealias EmailCompletionHandler = (_ emails: [String]) -> Void
 public typealias IdsCompletionHandler = (_ ids: [String]) -> Void
 public typealias GroupCompletionHandler = (_ groupCreated: Bool) -> Void
-public typealias AllGroupCompletionHanlder = (_ groupsArray: [Group]) -> Void
+public typealias AllGroupCompletionHandler = (_ groupsArray: [Group]) -> Void
+public typealias UserGroupsCompletionHandler = (_ groups: [Group]) -> Void
 
 public class DataService {
     public static let instance = DataService()
@@ -153,7 +154,7 @@ public class DataService {
         handler(true)
     }
     
-    public func getAllGroups(handler: @escaping AllGroupCompletionHanlder){
+    public func getAllGroups(handler: @escaping AllGroupCompletionHandler){
         var groupsArray = [Group]()
         REF_GROUPS.observeSingleEvent(of: .value) { (snapshot) in
             guard let groupSnapshot = snapshot.children.allObjects as? [DataSnapshot] else { return }
@@ -168,6 +169,19 @@ public class DataService {
             }
             
             handler(groupsArray)
+        }
+    }
+    
+    public func getUserGroups(uid: String, handler: @escaping UserGroupsCompletionHandler){
+        var groupArray: [Group] = []
+        self.getAllGroups { (groups) in
+            groups.forEach { (group) in
+                if group.members.contains(uid){
+                    groupArray.append(group)
+                }
+            }
+            
+            handler(groupArray)
         }
     }
 }
