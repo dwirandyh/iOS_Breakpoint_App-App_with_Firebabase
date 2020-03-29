@@ -9,16 +9,16 @@
 import UIKit
 
 @IBDesignable
-class InsetTextField: UITextField {
+public class InsetTextField: UITextField {
     
     private var padding = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         setupView()
     }
     
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         setupView()
     }
     
@@ -28,15 +28,15 @@ class InsetTextField: UITextField {
         self.attributedPlaceholder = placeholder
     }
     
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
+    override public func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
     }
     
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+    override public func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: self.padding)
     }
     
-    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+    override public func placeholderRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: self.padding)
     }
 }

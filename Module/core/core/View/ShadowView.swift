@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ShadowView : UIView {
-    override func awakeFromNib() {
+public class ShadowView : UIView {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         self.setupView()
     }
     
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         setupView()
     }
     

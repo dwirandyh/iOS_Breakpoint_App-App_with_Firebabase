@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     func presentDetail(_ targetedViewController: UIViewController){
         let transition = CATransition()
         transition.duration = 0.3

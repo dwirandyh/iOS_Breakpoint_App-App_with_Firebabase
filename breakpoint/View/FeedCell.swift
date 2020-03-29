@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import core
 
 class FeedCell: UITableViewCell {
     
