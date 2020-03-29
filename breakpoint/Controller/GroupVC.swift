@@ -34,7 +34,7 @@ class GroupVC: UIViewController {
     }
 }
 
-extension GroupVC: UITableViewDataSource {
+extension GroupVC: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -52,11 +52,7 @@ extension GroupVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let groupFeedVC = storyboard?.instantiateViewController(withIdentifier: "GroupFeedVC") as? GroupFeedVC else { return }
-        self.present(groupFeedVC, animated: true, completion: nil)
+        groupFeedVC.initGroupData(forGroup: self.groups[indexPath.row])
+        self.presentDetail(groupFeedVC)
     }
 }
-
-extension GroupVC: UITableViewDelegate {
-    
-}
-

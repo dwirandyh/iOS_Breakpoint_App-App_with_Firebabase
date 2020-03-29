@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DB064A3242FA03400DF9527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB064A2242FA03400DF9527 /* Assets.xcassets */; };
 		8DFA1562242F814F00F06C82 /* core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFA1558242F814F00F06C82 /* core.framework */; };
 		8DFA1567242F814F00F06C82 /* coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA1566242F814F00F06C82 /* coreTests.swift */; };
 		8DFA1569242F814F00F06C82 /* core.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DFA155B242F814F00F06C82 /* core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8DB064A2242FA03400DF9527 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DFA1558242F814F00F06C82 /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFA155B242F814F00F06C82 /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		8DFA155C242F814F00F06C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				8DFA1580242F87A600F06C82 /* Models */,
 				8DFA1576242F865600F06C82 /* Services */,
+				8DB064A2242FA03400DF9527 /* Assets.xcassets */,
 				8DFA1587242F919D00F06C82 /* Configuration.swift */,
 				8DFA155B242F814F00F06C82 /* core.h */,
 				8DFA155C242F814F00F06C82 /* Info.plist */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB064A3242FA03400DF9527 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

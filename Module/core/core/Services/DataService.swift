@@ -47,10 +47,12 @@ public class DataService {
     }
     
     public func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping SendCompletionHandler){
+        let feed: [String:String] = ["content": message, "senderId": uid]
         if groupKey != nil {
-            
+            REF_GROUPS.child(groupKey!).child("messages").childByAutoId().updateChildValues(feed)
+            sendComplete(true)
         } else {
-            REF_FEED.childByAutoId().updateChildValues(["content": message, "senderId": uid])
+            REF_FEED.childByAutoId().updateChildValues(feed)
             sendComplete(true)
         }
     }
@@ -80,6 +82,21 @@ public class DataService {
             }
             
             handler(messageArray)
+        }
+    }
+    
+    public func getAllMessagesFor(desiredGroup: Group, handler: @escaping (_ messageArray: [Message]) -> ()){
+        var groupMessagesArray:[Message] = []
+        REF_GROUPS.child(desiredGroup.key).child("messages").observeSingleEvent(of: .value) { (snapshot) in
+            guard let groupMessageSnapshot = snapshot.children.allObjects as? [DataSnapshot] else { return }
+            for groupMessage in groupMessageSnapshot {
+                let content: String = groupMessage.childSnapshot(forPath: "content").value as! String
+                let senderId: String = groupMessage.childSnapshot(forPath: "senderId").value as! String
+                let groupMessage = Message(content: content, senderId: senderId)
+                groupMessagesArray.append(groupMessage)
+            }
+            
+            handler(groupMessagesArray)
         }
     }
     
@@ -113,6 +130,21 @@ public class DataService {
             }
             
             handler(idArray)
+        }
+    }
+    
+    public func getEmailsFor(group: Group, handler: @escaping (_ emails: [String]) -> ()){
+        var emailArray: [String] = []
+        REF_USERS.observeSingleEvent(of: .value) { (dataSnapshot) in
+            guard let userSnapshot = dataSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for user in userSnapshot {
+                if group.members.contains(user.key) {
+                    let email = user.childSnapshot(forPath: "email").value as! String
+                    emailArray.append(email)
+                }
+            }
+            
+            handler(emailArray)
         }
     }
     
